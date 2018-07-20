@@ -53,18 +53,30 @@ AVAudioPlayer *lowplayer;
         }
 
         //Sets the sound paths sound
-        if (sound == 0)
-          soundFilePath = [NSString stringWithFormat:@"%@/heal.mp3", bundlePrefix];
-        else if (sound == 1)
-          soundFilePath = [NSString stringWithFormat:@"%@/lowhealth.mp3", bundlePrefix];
-        else if (sound == 2)
-          soundFilePath = [NSString stringWithFormat:@"%@/solidalert.mp3", bundlePrefix];
-        else if (sound == 3)
-          soundFilePath = [NSString stringWithFormat:@"%@/switch_bing.wav", bundlePrefix];
-        else if (sound == 4)
-          soundFilePath = [NSString stringWithFormat:@"%@/switch_enter.wav", bundlePrefix];
-        else if (sound == 5)
-          soundFilePath = [NSString stringWithFormat:@"%@/switch_user.wav", bundlePrefix];
+		// using a switch statement for more efficiency
+        switch(sound){
+			case 0:
+			  soundFilePath = [NSString stringWithFormat:@"%@/heal.mp3", bundlePrefix];
+			  break;
+			case 1:
+			  soundFilePath = [NSString stringWithFormat:@"%@/lowhealth.mp3", bundlePrefix];
+			  break;
+			case 2:
+			  soundFilePath = [NSString stringWithFormat:@"%@/solidalert.mp3", bundlePrefix];
+			  break;
+			case 3:
+			  soundFilePath = [NSString stringWithFormat:@"%@/switch_bing.wav", bundlePrefix];
+			  break;
+			case 4:
+			  soundFilePath = [NSString stringWithFormat:@"%@/switch_enter.wav", bundlePrefix];
+			  break;
+			case 5:
+			  soundFilePath = [NSString stringWithFormat:@"%@/switch_user.wav", bundlePrefix];
+			  break;
+			default:
+				soundFilePath = [NSString stringWithFormat:@"%@/heal.mp3", bundlePrefix];
+				break;
+		}
 
         //Grabs the sound file from the bundle path and makes the NSURL equal to it
         soundFileURL = [NSURL fileURLWithPath:soundFilePath];
@@ -87,20 +99,30 @@ AVAudioPlayer *lowplayer;
           return;
         }
 
-        if (lowsound == 0)
-          soundFilePath = [NSString stringWithFormat:@"%@/heal.mp3", bundlePrefix];
-        else if (lowsound == 1)
-          soundFilePath = [NSString stringWithFormat:@"%@/lowhealth.mp3", bundlePrefix];
-        else if (lowsound == 2)
-          soundFilePath = [NSString stringWithFormat:@"%@/solidalert.mp3", bundlePrefix];
-        else if (lowsound == 3)
-          soundFilePath = [NSString stringWithFormat:@"%@/switch_bing.wav", bundlePrefix];
-        else if (lowsound == 4)
-          soundFilePath = [NSString stringWithFormat:@"%@/switch_enter.wav", bundlePrefix];
-        else if (lowsound == 5)
-          soundFilePath = [NSString stringWithFormat:@"%@/switch_user.wav", bundlePrefix];
-        else
-          soundFilePath = [NSString stringWithFormat:@"%@/lowhealth.mp3", bundlePrefix];
+        // using a switch statement for more efficiency
+        switch(lowsound){
+			case 0:
+			  soundFilePath = [NSString stringWithFormat:@"%@/heal.mp3", bundlePrefix];
+			  break;
+			case 1:
+			  soundFilePath = [NSString stringWithFormat:@"%@/lowhealth.mp3", bundlePrefix];
+			  break;
+			case 2:
+			  soundFilePath = [NSString stringWithFormat:@"%@/solidalert.mp3", bundlePrefix];
+			  break;
+			case 3:
+			  soundFilePath = [NSString stringWithFormat:@"%@/switch_bing.wav", bundlePrefix];
+			  break;
+			case 4:
+			  soundFilePath = [NSString stringWithFormat:@"%@/switch_enter.wav", bundlePrefix];
+			  break;
+			case 5:
+			  soundFilePath = [NSString stringWithFormat:@"%@/switch_user.wav", bundlePrefix];
+			  break;
+			default:
+             soundFilePath = [NSString stringWithFormat:@"%@/lowhealth.mp3", bundlePrefix];
+             break;
+		}
 
         soundFileURL = [NSURL fileURLWithPath:soundFilePath];
 
